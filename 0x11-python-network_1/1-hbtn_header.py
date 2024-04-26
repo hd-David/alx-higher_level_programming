@@ -13,11 +13,11 @@ url = sys.argv[1]
 
 try:
     with urllib.request.urlopen(url) as response:
-        request_id =response.headers.get('X-Request-Id')
+        request_id = response.headers.get('X-Request-Id')
         if request_id:
             print(request_id)
         else:
             print('X-Request-Id not found in the response headers.')
 except urllib.error.URLError as e:
-                  print("Error fetching URL:", e.reason)
-                  sys.exit(1)
+    print("Error fetching URL:", e.reason)
+    sys.exit(1)
